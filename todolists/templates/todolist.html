@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- {% load staticfiles %} -->
+
+<html lang="en-US" ng-app="todoApp">
+	<head>
+		<title>Todo List Application</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	</head>
+	<h1>Django Rest Todo List Api Doc</h1>
+	<h5>Todo Lists</h5>
+	<div><a href="/api/todo">Path: /api/todo </a>| METHODs = GET, POST | Users' Todo Lists</div>
+	<div><a href="/api/todo/1">Path: /api/todo/{:id} </a> METHODS = POST, PUT, DELETE | Single Todo List View By Todo List ID</div>
+	<h5>Todo Items</h5>
+	<div><a href="/api/todoitem">Path: /api/todoitem | METHODS = GET, POST | Users' Todo Items</a></div>
+	<div><a href="/api/todoitem/1">Path: /api/todoitem/{:id} </a> METHODS = POST, PUT, DELETE | Single Todo list Item By todoitem ID</div>
+	<h5>Registration and Authentication</h5>
+	<div><a href="/user/register">Path: /user/register</a> METHODS = POST, Format=JSON, ex. {"username": "John Doe", "email": "John@gmail.com", "password": "abc"}</div>
+	<div><a href="/user/login">Path: /user/login</a> METHODS = POST, Format=JSON, ex. {"username": "John Doe", "password": "abc"}</div>
+	<div><a href="/user/logout">Path: /user/logout</a>METHODS = GET | logs out current session</div>
+</html>
+
+
+
+
+

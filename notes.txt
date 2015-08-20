@@ -1,0 +1,98 @@
+
+VIEWS FOR LOGIN BUT GENERICALLY AND EXPLICITLY CREATED
+
+
+ # @api_view(['POST'])
+ #    def create_auth(request):
+ #        """
+ #        Create User and Validate Field
+ #        """
+ #        serialized = UserSerializer(data=request.data)
+ #        if serialized.is_valid():
+ #            User.objects.create_user(
+ #                serialized.data['username'],
+ #                serialized.data['email'],
+ #                serialized.data['password']
+ #            )
+ #            return Response(serialized.data, status="201 Created")
+ #        else:
+ #            return Response(serialized._errors, status="400 Bad Request")
+
+
+# class AuthView(APIView):
+#     authentication_classes = (QuietBasicAuthentication,)
+#     # serializer_class = UserSerializer
+#      def post(self, request, *args, **kwargs):
+#         login(request, request.user)
+#         return Response(UserSerializer(request.user).data)
+
+#     # def post(self, request, *args, **kwargs):
+#     # 	import pdb
+#     #     return Response(self.serializer_class(request.user).data)
+# # {"username":"json", "email":"gamboanj@gmail.com","password": "abc123"}
+
+
+
+VIEWS FOR TODO LIST BUT GENERICALLY AND EXPLICITLY CREATED
+
+
+
+# from rest_framework.response import Response
+
+# class TodoListDetailView(mixins.Updategenerics.GenericAPIView):
+    
+#     serializer_class = TodoListSerializer
+
+#     def get(self, request, *args, **kwargs):
+#         """
+#         Returns Specific TodoItems Given the TodoList ID
+#         """
+#         itemlist = self.kwargs['pk']
+#         todoitems = TodoItem.objects.all().filter(list_name=itemlist, done=False, trash=False)
+#         serialized = TodoItemSerializer(todoitems, many=True)
+#         return Response(serialized.data)
+
+    # def update(request, *args, **kwargs):
+
+
+    # def get_queryset(self):
+    #     itemid = self.kwargs['pk']
+    #     import pdb
+    #     pdb.set_trace()
+    #     return TodoItem.objects.get(id=itemid)
+# class TodoItemDetailView(genererics.)
+
+# class TodoListsView(APIView):
+
+    # def get(self, request):
+        # todos = TodoList.objects.all()
+        # serializer = TodoListSerializer(todos, many=True)
+        # return Response(serializer.data)
+
+    # def post(self, request):
+    #     serializer = TodoListSerializer(data=request.DATA)
+    #     if not serializer.is_valid():
+    #         return Response(serializer.errors, status=
+    #             status.HTTP_400_BAD_REQUEST)
+    #     else:
+    #         data = serializer.data
+    #         t = TodoList(owner="Joaquin", description=data['description'], done=False)
+    #         t.save()
+    #         request.DATA['id'] = t.pk # return id
+    #         return Response(request.DATA, status=status.HTTP_201_CREATED)
+
+    # def put(self, request, todo_id):
+    #     serializer = TodoListSerializer(data=request.DATA)
+    #     if not serializer.is_valid():
+    #         return Response(serializer.errors, status=
+    #             status.HTTP_400_BAD_REQUEST)
+    #     else:
+    #         data = serializer.data
+    #         desc = data['description']
+    #         done = data['done']
+    #         t = Todo(id=todo_id, owner=request.user, description=desc,\
+    #                  done=done, updated=datetime.now())
+    #         t.save()
+    #         return Response(status=status.HTTP_200_OK)
+
+
